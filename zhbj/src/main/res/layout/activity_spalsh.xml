@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/rl_splash"
     android:background="@mipmap/splash_bg_newyear"
-    tools:context="com.tofirst.study.zhbj.SpalshActivity">
+    tools:context=".activity.SpalshActivity">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
