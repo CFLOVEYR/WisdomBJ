@@ -66,16 +66,16 @@ public class SpalshActivity extends AppCompatActivity {
         //旋转动画 0->360
         RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF,
                 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        rotate.setDuration(3000);
+        rotate.setDuration(1000);
         rotate.setFillAfter(true);//动画完成后不返回的制定
         //缩放动画  0->1的缩放
         ScaleAnimation scale = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF,
                 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        scale.setDuration(3000);
+        scale.setDuration(1000);
         scale.setFillAfter(true);//动画完成后不返回的制定
         //渐变动画(淡入淡出)  0->1
         AlphaAnimation alpha = new AlphaAnimation(0, 1.0f);
-        alpha.setDuration(3000);
+        alpha.setDuration(2000);
         alpha.setFillAfter(true);//动画完成后不返回的制定
         //添加到动画集合中
         set.addAnimation(rotate);
