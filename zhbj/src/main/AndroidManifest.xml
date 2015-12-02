@@ -11,7 +11,7 @@
 
         <!-- 闪屏页面  Splash page -->
         <activity
-            android:name=".activity.SpalshActivity"
+            android:name=".activity.activity.SpalshActivity"
             android:theme="@style/MyTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--引导页面-->
-        <activity android:name=".activity.GuideActivity"></activity>
+        <!-- 引导页面 -->
+        <activity android:name=".activity.activity.GuideActivity" />
+        <!--主界面-->
+        <activity android:name=".activity.activity.MainActivity"></activity>
     </application>
 
 </manifest>

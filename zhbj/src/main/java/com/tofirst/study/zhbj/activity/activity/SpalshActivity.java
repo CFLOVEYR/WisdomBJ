@@ -1,4 +1,4 @@
-package com.tofirst.study.zhbj.activity;
+package com.tofirst.study.zhbj.activity.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
 
 import com.tofirst.study.zhbj.R;
+import com.tofirst.study.zhbj.activity.utils.SharePreUtils;
 
 /**
  * 闪屏页面
@@ -54,8 +55,14 @@ public class SpalshActivity extends AppCompatActivity {
      * 调到下一页面的逻辑
      */
     private void enterNext() {
-        //跳转到引导页面
-        startActivity(new Intent(SpalshActivity.this, GuideActivity.class));
+        if (SharePreUtils.getsPreBoolean(this, "GuideFlag", false)) {
+            //跳转到主页面
+            startActivity(new Intent(SpalshActivity.this, MainActivity.class));
+        } else {
+            //跳转到引导页面
+            startActivity(new Intent(SpalshActivity.this, GuideActivity.class));
+        }
+
     }
 
     /**

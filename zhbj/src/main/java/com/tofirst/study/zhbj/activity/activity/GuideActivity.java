@@ -1,5 +1,6 @@
-package com.tofirst.study.zhbj.activity;
+package com.tofirst.study.zhbj.activity.activity;
 
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.tofirst.study.zhbj.R;
+import com.tofirst.study.zhbj.activity.utils.LogUtils;
+import com.tofirst.study.zhbj.activity.utils.SharePreUtils;
 
 public class GuideActivity extends AppCompatActivity {
     private static final String TAG = "BJ";
@@ -79,8 +82,7 @@ public class GuideActivity extends AppCompatActivity {
                 ll_points.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                 //获取到间距
                 pointDiatance = ll_points.getChildAt(1).getLeft() - ll_points.getChildAt(0).getLeft();
-                Log.d(TAG, "PointDiatance            " + pointDiatance);
-
+                LogUtils.d(TAG, "PointDiatance            " + pointDiatance);
             }
         });
     }
@@ -90,6 +92,16 @@ public class GuideActivity extends AppCompatActivity {
      */
     private void initListener() {
         vp_guide.setOnPageChangeListener(new MyPageListener());
+        //调到主界面
+        btn_guide_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //引导结束,下一次不进入了的判断
+                SharePreUtils.putPreBoolean(GuideActivity.this, "GuideFlag", true);
+                //跳转到主页面
+                startActivity(new Intent(GuideActivity.this, MainActivity.class));
+            }
+        });
     }
 
     /**
