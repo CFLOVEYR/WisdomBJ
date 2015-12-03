@@ -62,6 +62,8 @@ public class SpalshActivity extends AppCompatActivity {
             //跳转到引导页面
             startActivity(new Intent(SpalshActivity.this, GuideActivity.class));
         }
+        //结束当前页面
+        finish();
 
     }
 

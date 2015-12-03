@@ -4,9 +4,66 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@mipmap/title_red_bg"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_marginTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/img_menu" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="主页"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+    <com.tofirst.study.zhbj.activity.view.NoScorllViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></com.tofirst.study.zhbj.activity.view.NoScorllViewPager>
+
+    <RadioGroup
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我是主内容" />
+        android:gravity="center"
+        android:background="@mipmap/bottom_tab_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            style="@style/BottomTagTheme"
+            android:drawableTop="@drawable/bthome_content_selector"
+            android:text="首页" />
+
+        <RadioButton
+            style="@style/BottomTagTheme"
+            android:drawableTop="@drawable/btnews_content_selector"
+            android:text="新闻中心" />
+
+        <RadioButton
+            style="@style/BottomTagTheme"
+            android:drawableTop="@drawable/btsmart_content_selector"
+            android:text="智慧服务" />
+
+        <RadioButton
+            style="@style/BottomTagTheme"
+            android:drawableTop="@drawable/btgov_content_selector"
+            android:text="政务" />
+
+        <RadioButton
+            style="@style/BottomTagTheme"
+            android:drawableTop="@drawable/btsetting_content_selector"
+            android:text="设置" />
+    </RadioGroup>
 
 </LinearLayout>

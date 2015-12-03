@@ -100,6 +100,7 @@ public class GuideActivity extends AppCompatActivity {
                 SharePreUtils.putPreBoolean(GuideActivity.this, "GuideFlag", true);
                 //跳转到主页面
                 startActivity(new Intent(GuideActivity.this, MainActivity.class));
+                finish();
             }
         });
     }
