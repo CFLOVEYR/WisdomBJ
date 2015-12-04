@@ -1,6 +1,7 @@
 package com.tofirst.study.zhbj.activity.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -32,7 +33,7 @@ public class MainActivity extends SlidingFragmentActivity {
      */
     private void initView() {
 
-        android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
+        FragmentManager manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
         LeftMenuFragment leftMenuFragment = new LeftMenuFragment();
         ContentFragment contentFragment = new ContentFragment();
@@ -57,6 +58,6 @@ public class MainActivity extends SlidingFragmentActivity {
 //        slidingMenu.setSecondaryMenu(R.layout.right_menu);// 设置右侧边栏
         slidingMenu.setMode(SlidingMenu.LEFT);// 设置展现模式
 
-        slidingMenu.setBehindOffset(300);// 设置预留屏幕的宽度
+        slidingMenu.setBehindOffset(200);// 设置预留屏幕的宽度
     }
 }
