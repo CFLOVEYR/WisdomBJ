@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.tofirst.study.zhbj.R;
 import com.tofirst.study.zhbj.activity.activity.MainActivity;
+import com.tofirst.study.zhbj.activity.utils.SlidingMenuUtils;
 
 /**
  * 主页面上边的内容的基类
@@ -55,9 +56,7 @@ public class BaseContentPaper {
      * 显示或者隐藏菜单栏的方法
      */
     private void setSlidingMenuToggle() {
-        MainActivity MainUI = (MainActivity) mActivity;
-        SlidingMenu slidingMenu = MainUI.getSlidingMenu();
-        slidingMenu.toggle();//切换菜单显示隐藏的方法,调用这个方法后:显示->隐藏  隐藏->显示
+        SlidingMenuUtils.setSlidingMenuToggle(mActivity);
     }
 
     /**

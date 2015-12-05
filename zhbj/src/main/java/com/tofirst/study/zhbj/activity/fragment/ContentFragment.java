@@ -27,11 +27,11 @@ import java.util.List;
  * 主内容的fragment
  */
 public class ContentFragment extends BaseFragment {
-    private NoScorllViewPager vp_content;
-    private List<TextView> iv_lists;
-    private RadioGroup rp_content;
-    private List<BaseContentPaper> list_contentPapers;
-    private MyAdapter adapter;
+    public NoScorllViewPager vp_content;
+    public List<TextView> iv_lists;
+    public RadioGroup rp_content;
+    public List<BaseContentPaper> list_contentPapers;
+    public MyAdapter adapter;
 
     @Override
     public View initViews() {
@@ -123,6 +123,10 @@ public class ContentFragment extends BaseFragment {
 
             }
         });
+    }
+
+    public NewsContentPaper getNewsContentPager() {
+        return (NewsContentPaper) list_contentPapers.get(1);
     }
 
 

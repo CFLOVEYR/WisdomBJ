@@ -12,9 +12,9 @@ import com.tofirst.study.zhbj.activity.fragment.LeftMenuFragment;
 
 public class MainActivity extends SlidingFragmentActivity {
 
-    private static final String LEFTFRAGMENT = "leftfragment";
-    private static final String COTENTFRAGMENT = "contentfragment";
-    private FragmentTransaction transaction;
+    public static final String LEFTFRAGMENT = "leftfragment";
+    public static final String CONTENTFRAGMENT = "contentfragment";
+    public FragmentTransaction transaction;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,10 +37,10 @@ public class MainActivity extends SlidingFragmentActivity {
         transaction = manager.beginTransaction();
         LeftMenuFragment leftMenuFragment = new LeftMenuFragment();
         ContentFragment contentFragment = new ContentFragment();
+        //给主页面赋值内容
+        transaction.replace(R.id.fl_content, contentFragment, CONTENTFRAGMENT);
         //给左边侧滑菜单赋值内容
         transaction.replace(R.id.fl_menu, leftMenuFragment, LEFTFRAGMENT);
-        //给主页面赋值内容
-        transaction.replace(R.id.fl_content, contentFragment, COTENTFRAGMENT);
         transaction.commit();
     }
 
@@ -58,6 +58,24 @@ public class MainActivity extends SlidingFragmentActivity {
 //        slidingMenu.setSecondaryMenu(R.layout.right_menu);// 设置右侧边栏
         slidingMenu.setMode(SlidingMenu.LEFT);// 设置展现模式
 
-        slidingMenu.setBehindOffset(200);// 设置预留屏幕的宽度
+        slidingMenu.setBehindOffset(250);// 设置预留屏幕的宽度
+    }
+
+    // 获取侧边栏fragment
+    public LeftMenuFragment getLeftMenuFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        LeftMenuFragment fragment = (LeftMenuFragment) fm
+                .findFragmentByTag(LEFTFRAGMENT);
+
+        return fragment;
+    }
+
+    // 获取主页面fragment
+    public ContentFragment getContentFragment() {
+        FragmentManager fm = getSupportFragmentManager();
+        ContentFragment fragment = (ContentFragment) fm
+                .findFragmentByTag(CONTENTFRAGMENT);
+
+        return fragment;
     }
 }

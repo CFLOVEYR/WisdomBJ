@@ -35,6 +35,7 @@ public abstract class BaseFragment extends Fragment {
         initData();
     }
 
+
     //子类必须实现
     public abstract View initViews();
 
