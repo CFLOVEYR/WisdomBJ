@@ -53,7 +53,6 @@ public class LeftMenuFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-
     }
 
     /**

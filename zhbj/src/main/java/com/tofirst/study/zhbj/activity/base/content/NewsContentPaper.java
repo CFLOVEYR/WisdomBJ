@@ -40,15 +40,14 @@ public class NewsContentPaper extends BaseContentPaper {
     @Override
     public void initData() {
         super.initData();
-//        tv_title.setText("新闻中心");//设置标题
-//        iv_menu.setVisibility(View.VISIBLE);//设置菜单不显示
-//        //给内容模拟添加内容
-//        tv.setText("新闻中心");
-//        //设置能侧滑
+       //设置能侧滑
         setSlidingMenuEnable(true);
         getDataFromServer();
     }
 
+    /**
+     * 从服务器获得信息
+     */
     private void getDataFromServer() {
         HttpUtils utils = new HttpUtils();
         utils.send(HttpRequest.HttpMethod.GET, Global.DATAURL, new RequestCallBack<String>() {
@@ -82,12 +81,13 @@ public class NewsContentPaper extends BaseContentPaper {
         leftMenuFragment.setMenuData(data);
         //给侧滑菜单详情页集合添加内容
         list_left_menus = new ArrayList<BaseLeftMenuPaper>();
-        list_left_menus.add(new NewsDetailMenuPager(mActivity));//新闻
+        list_left_menus.add(new NewsDetailMenuPager(mActivity,datamenu));//新闻
         list_left_menus.add(new TopicDetailMenuPager(mActivity));//专题
         list_left_menus.add(new PhotosDetailMenuPager(mActivity));//组图
         list_left_menus.add(new InteractiveDetailMenuPager(mActivity));//互动
         //需要加载完数据,点击新闻中心,则显示新闻菜单详情页的第一页
         setLeftMenuDetailPager(0);
+
     }
 
     /**
@@ -101,5 +101,7 @@ public class NewsContentPaper extends BaseContentPaper {
         fl_base_content.addView(baseLeftMenuPaper.mRootView);
         //主页面的标题,通过服务器得到的信息
         tv_title.setText(datamenu.get(position).title);
+        //初始化数据
+        baseLeftMenuPaper.initData();
     }
 }
