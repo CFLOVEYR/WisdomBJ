@@ -58,7 +58,7 @@ public class MainActivity extends SlidingFragmentActivity {
 //        slidingMenu.setSecondaryMenu(R.layout.right_menu);// 设置右侧边栏
         slidingMenu.setMode(SlidingMenu.LEFT);// 设置展现模式
 
-        slidingMenu.setBehindOffset(250);// 设置预留屏幕的宽度
+        slidingMenu.setBehindOffset(150);// 设置预留屏幕的宽度
     }
 
     // 获取侧边栏fragment

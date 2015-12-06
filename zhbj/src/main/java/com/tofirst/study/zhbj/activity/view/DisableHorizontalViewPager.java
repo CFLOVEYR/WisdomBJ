@@ -17,11 +17,18 @@ public class DisableHorizontalViewPager extends ViewPager {
         super(context, attrs);
     }
     /**
-     * 请求父控件及其祖宗控件不要阻拦我
+     * 请求父控件及其祖宗控件不要拦截
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        getParent().requestDisallowInterceptTouchEvent(true);
+        if (getCurrentItem() == 0) {
+            //如果是最左边的内容,就请求拦截
+            getParent().requestDisallowInterceptTouchEvent(false);//请求拦截
+        }else {
+            //如果不是最左边的内容,就请求不拦截
+            getParent().requestDisallowInterceptTouchEvent(true);//请求不拦截
+        }
+
         return super.dispatchTouchEvent(ev);
     }
 }
