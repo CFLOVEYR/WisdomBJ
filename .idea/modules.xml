@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/SlidingMenuLibrary/SlidingMenuLibrary.iml" filepath="$PROJECT_DIR$/SlidingMenuLibrary/SlidingMenuLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicatorLibrary/ViewPagerIndicatorLibrary.iml" filepath="$PROJECT_DIR$/ViewPagerIndicatorLibrary/ViewPagerIndicatorLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/WisdomBJ.iml" filepath="$PROJECT_DIR$/WisdomBJ.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhbj/zhbj.iml" filepath="$PROJECT_DIR$/zhbj/zhbj.iml" />

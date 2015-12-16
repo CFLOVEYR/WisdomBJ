@@ -1,1 +1,1 @@
-include ':app', ':zhbj'
+include ':app',"zhbj",":ViewPagerIndicatorLibrary",":SlidingMenuLibrary"
